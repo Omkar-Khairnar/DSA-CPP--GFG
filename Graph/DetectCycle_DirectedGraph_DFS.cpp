@@ -2,6 +2,7 @@
  
 using namespace std;
 //Detect cycle in DIRECTED Graph-->(both connected and disconnected graphs)
+//IDEA: Here we are maintaining a RecStack array to track the visited vertex is in current stack or not. For more details watch Video.
  bool DFSRec(vector<int> adj[], int src, bool visited[], bool recStack[]){
     visited[src]=true;
     recStack[src]=true;
@@ -25,6 +26,8 @@ using namespace std;
     }
     return false;
  }
+
+
  
 int main(int argc, char const *argv[])
 {

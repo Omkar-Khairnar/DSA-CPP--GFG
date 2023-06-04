@@ -1,6 +1,26 @@
 #include <bits/stdc++.h>
  
 using namespace std;
+
+
+void addEdge(vector<int> adj[], int u, int v)
+{
+    adj[u].push_back(v);
+    adj[v].push_back(u);
+} 
+
+void printList(vector<int> adj[], int V)
+{
+    for (int i = 0; i < V; i++)
+    {
+        for (int x : adj[i])
+        {
+            cout << x << " ";
+        }
+        cout << "\n";
+    }
+}
+
 // Detect cycle in UNDIRECTED GRAPHS -->(both connected and disconnected graphs)
   bool DFSRec(vector<int>adj[], int src, bool visited[], int parent){
     visited[src]=true;
@@ -23,9 +43,16 @@ using namespace std;
     }
     return false;
  }
- 
 int main(int argc, char const *argv[])
 {
- 
+ int V = 4;
+    vector<int> adj[4];
+    addEdge(adj, 0, 1);
+    addEdge(adj, 1, 2);
+    // addEdge(adj, 0, 2);
+    addEdge(adj, 1, 3);
+    // printList(adj, V);
+
+    cout<<isCycle(adj,V,0);
   return 0;
 }
