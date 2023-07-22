@@ -34,6 +34,37 @@ using namespace std;
     }
     return res;
  }
+
+
+
+ //Another approach using Priority Queue
+  int spanningTree(int V, vector<vector<int>> adj[])
+    {
+        vector<int>vis(V,0);
+        priority_queue<pair<int,int>, vector<pair<int,int>>, greater<pair<int,int>>>pq;
+        //pq({edgeWeight, node})
+        pq.push({0,0});
+        int sum=0;
+        while(!pq.empty()){
+            auto it=pq.top();
+            pq.pop();
+            int wt=it.first;
+            int node=it.second;
+            //If its already visited then continuing to next iteration
+            if(vis[node]==1) continue;
+            //marking visited node after removing from queue
+            vis[node]=1;
+            //Here we are adding min. spanning edge 
+            sum+=wt;
+            
+            for(auto vec :adj[node]){
+                if(!vis[vec[0]]){
+                    pq.push({vec[1], vec[0]});
+                }
+            }
+        }
+        return sum;
+    }
 int main(int argc, char const *argv[])
 {
  

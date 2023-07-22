@@ -9,7 +9,7 @@ using namespace std;
 
     for(int u:adj[src]){
         if(!visited[u]){
-            if(DFSRec(adj,u, visited, recStack)) return true;
+            if(DFSRec(adj,u, visited, pathvisited)) return true;
         }
         else if(pathvisited[u]) return true;
     }

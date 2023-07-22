@@ -57,6 +57,7 @@ public:
                 edges.push_back({it[1],{i,it[0]}});
             }
         }
+        //Sorting the edges based on their weight
         sort(edges.begin(), edges.end());
         DisjointSet ds(V);
         int MSTwt=0;
