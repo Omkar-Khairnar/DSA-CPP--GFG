@@ -51,6 +51,7 @@ public:
 
  int spanningTree(int V, vector<vector<int>> adj[])
     {
+        // vector of {wt,{u,v}}
         vector<pair<int, pair<int,int>>>edges;
         for(int i=0; i<V; i++){
             for(auto it: adj[i]){
@@ -71,7 +72,6 @@ public:
                 ds.unionBySize(u,v);
             }
         }
-        
         return MSTwt;
         
     }

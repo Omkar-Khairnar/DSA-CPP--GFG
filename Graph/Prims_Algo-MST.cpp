@@ -44,7 +44,7 @@ using namespace std;
         priority_queue<pair<int,int>, vector<pair<int,int>>, greater<pair<int,int>>>pq;
         //pq({edgeWeight, node})
         pq.push({0,0});
-        int sum=0;
+        int sum=0;  
         while(!pq.empty()){
             auto it=pq.top();
             pq.pop();

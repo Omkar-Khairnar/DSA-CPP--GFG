@@ -11,8 +11,10 @@ using namespace std;
         q.pop();
         for(int v:adj[u]){
             indegree[v]++;
-            if(!visited[v]){ q.push(v);
-            visited[v]=true;}
+            if(!visited[v]){
+               q.push(v);
+               visited[v]=true;
+            }
         }
     }
  }
